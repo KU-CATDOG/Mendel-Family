@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{13F3A2AE-1AE2-8A7E-022F-04BD2F73D0C9}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DragAndDrop.cs">
+    <Files>
+      <File FileName="Assets/Scripts/DragAndDrop.cs" Line="32" Column="18" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Mendel-Family" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="DragAndDrop.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b1eb4cf4-88ef-49b7-941e-06d48381ed39" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
