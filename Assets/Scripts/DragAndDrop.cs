@@ -26,7 +26,8 @@ public class DragAndDrop : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
             {
-                if (hit.collider.tag == "Bean")
+                // check if the bean is already allocated in the puzzle
+                if (hit.collider.tag == "Bean" && hit.collider.GetComponent<BeanInfo>().fixedBean == false)
                 {
                     target = hit.transform.gameObject;
                 }
