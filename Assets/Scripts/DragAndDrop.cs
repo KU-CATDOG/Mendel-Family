@@ -10,22 +10,31 @@ public class DragAndDrop : MonoBehaviour
 
     Vector3 screenPosition;
 
+    LayerMask layerMask;
+    public LayerMask unselectedBean;
+    public LayerMask selectedBean;
+
     void Start()
     {
         cam = Camera.main;
+        layerMask = unselectedBean;
     }
 
     void Update()
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+       
 
         // Mouse rightclick
         if (Input.GetMouseButton(0))
         {
             // Set target
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
+
+            if (Physics.Raycast(ray, out hit, 100, layerMask))
             {
+                Debug.Log(hit.collider.name);
+
                 // check if the bean is already allocated in the puzzle
                 if (hit.collider.tag == "Bean" && hit.collider.GetComponent<BeanInfo>().fixedBean == false)
                 {
@@ -38,13 +47,20 @@ public class DragAndDrop : MonoBehaviour
             {
                 clicked = true;
                 screenPosition = cam.WorldToScreenPoint(target.transform.position);
+                layerMask = selectedBean;
+                target.layer = selectedBean;
             }
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             clicked = false;
-            target = null;
+            layerMask = unselectedBean;
+            if (target != null)
+            {            
+                target.layer = unselectedBean;
+                target = null;
+            }
         }
 
         if (clicked)
