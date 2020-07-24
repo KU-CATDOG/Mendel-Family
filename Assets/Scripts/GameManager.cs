@@ -14,13 +14,15 @@ public class GameManager : MonoBehaviour
         if (slots[0].GetComponent<SlotController>().parent == false || slots[1].GetComponent<SlotController>().parent == false)
         {
             Debug.LogError("Wrong slots are in parent position");
-        }        
+        }
+
+        beans = new GameObject[slots.Length];
     }
 
     // press ok button to confirm places
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.KeypadEnter))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             for (int i = 0; i < slots.Length; i++)
             {
@@ -28,30 +30,54 @@ public class GameManager : MonoBehaviour
 
                 if (beans[i] == null)
                 {
-                    Debug.Log("Level uncompleted");
+                    Debug.Log("Level incomplete");
                     break;
                 }
 
                 else if (i == slots.Length - 1)
-                    ConfirmLevel();
+                {
+                    if (ConfirmLevel())
+                    {
+                        Debug.Log("Game Clear!");
+                    }
+                    else
+                    {
+                        Debug.Log("Try Again!");
+                    }
+                }
             }
         }
     }
 
-    void ConfirmLevel()
+    bool ConfirmLevel()
     {
+        int result = 0;
+
         for (int j = 2; j < slots.Length; j++)
         {
-
+            // Check if the first parent has the first gene of a child
+            if (beans[0].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[0] || beans[0].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[0])
+            {
+                if (beans[1].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[1] || beans[1].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[1])
+                    result++;
+                else
+                    break;
+            }
+            // Check if the second parent has the first gene of a child
+            else if (beans[1].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[0] || beans[1].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[0])
+            {
+                if (beans[0].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[1] || beans[0].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[1])
+                    result++;
+                else
+                    break;
+            }
+            else
+                break;
         }
 
-        if (true)
-        {
-            Debug.Log("Game Clear!");
-        }
+        if (result == slots.Length - 2)
+            return true;
         else
-        {
-            Debug.Log("Try Again!");
-        }
+            return false;
     }
 }

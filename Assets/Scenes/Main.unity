@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedBean: 0
-  y: 0200000000000000
+  y: 0000000000000000
   r: 0000000000000000
 --- !u!65 &33554116
 BoxCollider:
@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedBean: 1
-  y: 0100000001000000
+  y: 0000000001000000
   r: 0000000000000000
 --- !u!65 &450692571
 BoxCollider:
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedBean: 0
-  y: 0000000002000000
+  y: 0100000001000000
   r: 0000000000000000
 --- !u!54 &486465057
 Rigidbody:
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedBean: 0
-  y: 0100000001000000
+  y: 0000000001000000
   r: 0000000000000000
 --- !u!65 &981946689
 BoxCollider:
@@ -1493,7 +1493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedBean: 0
-  y: 0100000001000000
+  y: 0000000001000000
   r: 0000000000000000
 --- !u!65 &1755510949
 BoxCollider:
