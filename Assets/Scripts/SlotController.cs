@@ -18,7 +18,7 @@ public class SlotController : MonoBehaviour
     {
         if (other.tag == "Bean" && occupyingBean != null)
         {
-            other.transform.position = new Vector3(transform.position.x, transform.position.y, other.transform.position.z);
+            other.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             occupyingBean = other.gameObject;
         }
     }

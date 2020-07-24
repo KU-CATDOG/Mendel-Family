@@ -48,7 +48,8 @@ public class DragAndDrop : MonoBehaviour
                 clicked = true;
                 screenPosition = cam.WorldToScreenPoint(target.transform.position);
                 layerMask = selectedBean;
-                target.layer = selectedBean;
+                //target.layer = selectedBean;
+                target.layer = 8;
             }
         }
 
@@ -58,7 +59,8 @@ public class DragAndDrop : MonoBehaviour
             layerMask = unselectedBean;
             if (target != null)
             {            
-                target.layer = unselectedBean;
+                //target.layer = unselectedBean;
+                target.layer = 9;
                 target = null;
             }
         }
