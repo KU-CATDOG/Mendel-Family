@@ -16,9 +16,9 @@ public class SlotController : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Bean" && occupyingBean != null)
+        if (other.tag == "Bean" && (occupyingBean == null || occupyingBean == other.gameObject))
         {
-            other.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            other.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, other.transform.position.z);
             occupyingBean = other.gameObject;
         }
     }

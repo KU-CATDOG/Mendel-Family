@@ -963,9 +963,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
   unselectedBean:
     serializedVersion: 2
     m_Bits: 512
