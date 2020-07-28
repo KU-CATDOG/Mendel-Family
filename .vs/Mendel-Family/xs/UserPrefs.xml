@@ -5,7 +5,7 @@
       <File FileName="Assets/Scripts/BeanInfo.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GameManager.cs" Line="73" Column="77" />
       <File FileName="Assets/Scripts/SlotController.cs" Line="3" Column="19" />
-      <File FileName="Assets/Scripts/UIController.cs" Line="7" Column="17" />
+      <File FileName="Assets/Scripts/UIController.cs" Line="52" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
