@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     // Relation between beans
     GameObject[] famTree;
 
-    // Start is called before the first frame update
     void Start()
     {
         // Parent beans are always in slot 0 and 1
@@ -62,6 +61,7 @@ public class GameManager : MonoBehaviour
             // Check if the first parent has the first gene of a child
             if (beans[0].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[0] || beans[0].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[0])
             {
+                // Check if the first parent has the second gene of a child
                 if (beans[1].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[1] || beans[1].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[1])
                     result++;
                 else
@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
             // Check if the second parent has the first gene of a child
             else if (beans[1].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[0] || beans[1].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[0])
             {
+                // Check if the second parent has the second gene of a child
                 if (beans[0].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[1] || beans[0].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[1])
                     result++;
                 else

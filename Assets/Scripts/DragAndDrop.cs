@@ -33,8 +33,6 @@ public class DragAndDrop : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100, layerMask))
             {
-                Debug.Log(hit.collider.name);
-
                 // check if the bean is already allocated in the puzzle
                 if (hit.collider.tag == "Bean" && hit.collider.GetComponent<BeanInfo>().fixedBean == false)
                 {

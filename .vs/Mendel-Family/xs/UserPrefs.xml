@@ -1,7 +1,11 @@
 ﻿<Properties StartupConfiguration="{13F3A2AE-1AE2-8A7E-022F-04BD2F73D0C9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DragAndDrop.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UIController.cs">
     <Files>
-      <File FileName="Assets/Scripts/DragAndDrop.cs" Line="32" Column="18" />
+      <File FileName="Assets/Scripts/DragAndDrop.cs" Line="27" Column="28" />
+      <File FileName="Assets/Scripts/BeanInfo.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="73" Column="77" />
+      <File FileName="Assets/Scripts/SlotController.cs" Line="3" Column="19" />
+      <File FileName="Assets/Scripts/UIController.cs" Line="7" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,7 +13,7 @@
           <Node name="Mendel-Family" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="DragAndDrop.cs" selected="True" />
+                <Node name="UIController.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -19,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b1eb4cf4-88ef-49b7-941e-06d48381ed39" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2269e437-46f7-44a9-82ec-4360d4e383a3" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

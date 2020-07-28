@@ -8,7 +8,6 @@ public class SlotController : MonoBehaviour
 
     public GameObject occupyingBean;
 
-    // Start is called before the first frame update
     void Start()
     {
         occupyingBean = null;
