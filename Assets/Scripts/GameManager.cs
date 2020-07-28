@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] slots;
     GameObject[] beans;
 
+    // Relation between beans
+    GameObject[] famTree;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,7 @@ public class GameManager : MonoBehaviour
         }
 
         beans = new GameObject[slots.Length];
+        famTree = new GameObject[12];
     }
 
     // press ok button to confirm places

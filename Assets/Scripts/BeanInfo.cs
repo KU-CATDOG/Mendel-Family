@@ -11,7 +11,7 @@ public class BeanInfo : MonoBehaviour
     // Bean color: YY == 00, Yy == 01, yy == 11
     public int[] y = new int[2];
 
-    // Bean shape
+    // Bean shape: RR == 00, Rr = 01, rr == 11
     public int[] r = new int[2];
 
     void OnCollisionEnter(Collision col)
