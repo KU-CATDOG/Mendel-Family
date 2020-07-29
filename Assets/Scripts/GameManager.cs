@@ -55,7 +55,23 @@ public class GameManager : MonoBehaviour
     bool ConfirmLevel()
     {
         int result = 0;
+        /*
+        for (int j = 2; j < slots.Length; j++)
+        {
+            for (int k = 0; k < genes.Length; k++)
+            // Check if the first parent has the first gene of a child
+            if (beans[0].GetComponent<BeanInfo>().genes[k][0] == beans[j].GetComponent<BeanInfo>().y[0] || beans[0].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[0])
+            {
+                // Check if the first parent has the second gene of a child
+                if (beans[1].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[1] || beans[1].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[1])
+                    result++;
+                else
+                    break;
+        }
 
+        if (result == (slots.Length - 2) * genes.Length)
+            return true;
+        */
         for (int j = 2; j < slots.Length; j++)
         {
             // Check if the first parent has the first gene of a child
