@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class BeanInfo : MonoBehaviour
 {
@@ -23,5 +25,15 @@ public class BeanInfo : MonoBehaviour
     {
         if (col.gameObject.tag == "Bean")
             Physics.IgnoreCollision(col.collider, this.GetComponent<Collider>());
+    }
+
+    public int[] Genotype(int arrNum)
+    {
+        if (arrNum == 0)
+            return y;
+        else if (arrNum == 1)
+            return r;
+        else
+            return null;
     }
 }

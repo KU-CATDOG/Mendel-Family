@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] slots;
     GameObject[] beans;
 
-    // Relation between beans
-    GameObject[] famTree;
+    // Relation between beans: parent/child, pods, beans
+    GameObject[,,] famTree;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         }
 
         beans = new GameObject[slots.Length];
-        famTree = new GameObject[12];
+        famTree = new GameObject[3, 4, 4];
     }
 
     // press ok button to confirm places
@@ -56,22 +56,35 @@ public class GameManager : MonoBehaviour
     {
         int result = 0;
 
+        // result = color + shape
+        result += CheckAnswer(0) + CheckAnswer(1);
+
+        if (result == (slots.Length - 2) * 2)
+            return true;
+        else
+            return false;
+    }
+
+    int CheckAnswer(int arrNum)
+    {
+        int result = 0;
+
         for (int j = 2; j < slots.Length; j++)
         {
             // Check if the first parent has the first gene of a child
-            if (beans[0].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[0] || beans[0].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[0])
+            if (beans[0].GetComponent<BeanInfo>().Genotype(arrNum)[0] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[0] || beans[0].GetComponent<BeanInfo>().Genotype(arrNum)[1] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[0])
             {
                 // Check if the first parent has the second gene of a child
-                if (beans[1].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[1] || beans[1].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[1])
+                if (beans[1].GetComponent<BeanInfo>().Genotype(arrNum)[0] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[1] || beans[1].GetComponent<BeanInfo>().Genotype(arrNum)[1] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[1])
                     result++;
                 else
                     break;
             }
             // Check if the second parent has the first gene of a child
-            else if (beans[1].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[0] || beans[1].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[0])
+            else if (beans[1].GetComponent<BeanInfo>().Genotype(arrNum)[0] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[0] || beans[1].GetComponent<BeanInfo>().Genotype(arrNum)[1] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[0])
             {
                 // Check if the second parent has the second gene of a child
-                if (beans[0].GetComponent<BeanInfo>().y[0] == beans[j].GetComponent<BeanInfo>().y[1] || beans[0].GetComponent<BeanInfo>().y[1] == beans[j].GetComponent<BeanInfo>().y[1])
+                if (beans[0].GetComponent<BeanInfo>().Genotype(arrNum)[0] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[1] || beans[0].GetComponent<BeanInfo>().Genotype(arrNum)[1] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[1])
                     result++;
                 else
                     break;
@@ -79,16 +92,6 @@ public class GameManager : MonoBehaviour
             else
                 break;
         }
-
-        if (result == slots.Length - 2)
-            return true;
-        else
-            return false;
-    }
-
-    int CheckAnswer(int[] arr)
-    {
-        int result = 0;
 
         return result;
     }
