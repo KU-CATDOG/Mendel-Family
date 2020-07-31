@@ -14,19 +14,6 @@ public class BeanInfo : MonoBehaviour
     // Bean shape: RR == 00, Rr = 01, rr == 11
     public int[] r = new int[2];
 
-    /*
-    Color: genes[0][]
-    Shape: genes[1][]
-    
-    public int[][] genes = new int[2][2];
-    */
-
-    void Start()
-    {
-        if (y[0] == y[1])
-            this.transform.GetChild(0).gameObject.SetActive(true);
-    }
-
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Bean")
