@@ -85,4 +85,11 @@ public class GameManager : MonoBehaviour
         else
             return false;
     }
+
+    int CheckAnswer(int[] arr)
+    {
+        int result = 0;
+
+        return result;
+    }
 }

@@ -10,9 +10,14 @@ public class BeanInfo : MonoBehaviour
 
     // Bean color: YY == 00, Yy == 01, yy == 11
     public int[] y = new int[2];
-
     // Bean shape: RR == 00, Rr = 01, rr == 11
     public int[] r = new int[2];
+
+    void Start()
+    {
+        if (y[0] == 0 && y[1] == 0)
+            this.transform.GetChild(0).gameObject.SetActive(true);
+    }
 
     void OnCollisionEnter(Collision col)
     {
