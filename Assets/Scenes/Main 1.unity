@@ -247,7 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf57ea8fb6804f46809ee510a321c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: 1
+  parents:
+  - {fileID: 0}
+  - {fileID: 0}
   occupyingBean: {fileID: 0}
 --- !u!65 &299238937
 BoxCollider:
@@ -790,7 +792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf57ea8fb6804f46809ee510a321c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: 0
+  parents:
+  - {fileID: 299238935}
+  - {fileID: 1425443624}
   occupyingBean: {fileID: 0}
 --- !u!65 &1174333342
 BoxCollider:
@@ -1094,7 +1098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf57ea8fb6804f46809ee510a321c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: 1
+  parents:
+  - {fileID: 0}
+  - {fileID: 0}
   occupyingBean: {fileID: 0}
 --- !u!65 &1425443626
 BoxCollider:
@@ -1417,7 +1423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf57ea8fb6804f46809ee510a321c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: 0
+  parents:
+  - {fileID: 299238935}
+  - {fileID: 1425443624}
   occupyingBean: {fileID: 0}
 --- !u!65 &2005119283
 BoxCollider:

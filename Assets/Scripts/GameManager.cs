@@ -7,19 +7,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] slots;
     GameObject[] beans;
 
-    // Relation between beans: parent/child, pods, beans
-    GameObject[,,] famTree;
-
     void Start()
     {
-        // Parent beans are always in slot 0 and 1
-        if (slots[0].GetComponent<SlotController>().parent == false || slots[1].GetComponent<SlotController>().parent == false)
-        {
-            Debug.LogError("Wrong slots are in parent position");
-        }
-
         beans = new GameObject[slots.Length];
-        famTree = new GameObject[3, 4, 4];
     }
 
     // press ok button to confirm places
@@ -59,7 +49,7 @@ public class GameManager : MonoBehaviour
         // result = color + shape
         result += CheckAnswer(0) + CheckAnswer(1);
 
-        if (result == (slots.Length - 2) * 2)
+        if (result == 0)
             return true;
         else
             return false;
@@ -68,29 +58,49 @@ public class GameManager : MonoBehaviour
     int CheckAnswer(int arrNum)
     {
         int result = 0;
+        GameObject parentA, parentB, child;
 
-        for (int j = 2; j < slots.Length; j++)
+        for (int j = 0; j < slots.Length; j++)
         {
-            // Check if the first parent has the first gene of a child
-            if (beans[0].GetComponent<BeanInfo>().Genotype(arrNum)[0] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[0] || beans[0].GetComponent<BeanInfo>().Genotype(arrNum)[1] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[0])
-            {
-                // Check if the first parent has the second gene of a child
-                if (beans[1].GetComponent<BeanInfo>().Genotype(arrNum)[0] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[1] || beans[1].GetComponent<BeanInfo>().Genotype(arrNum)[1] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[1])
-                    result++;
-                else
-                    break;
-            }
-            // Check if the second parent has the first gene of a child
-            else if (beans[1].GetComponent<BeanInfo>().Genotype(arrNum)[0] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[0] || beans[1].GetComponent<BeanInfo>().Genotype(arrNum)[1] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[0])
-            {
-                // Check if the second parent has the second gene of a child
-                if (beans[0].GetComponent<BeanInfo>().Genotype(arrNum)[0] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[1] || beans[0].GetComponent<BeanInfo>().Genotype(arrNum)[1] == beans[j].GetComponent<BeanInfo>().Genotype(arrNum)[1])
-                    result++;
-                else
-                    break;
-            }
+            if (slots[j].GetComponent<SlotController>().parents[0] == null)
+                continue;
             else
-                break;
+            {
+                Debug.Log("!");
+                if (slots[j].GetComponent<SlotController>().parents[1] == null)
+                    slots[j].GetComponent<SlotController>().parents[1] = slots[j].GetComponent<SlotController>().parents[0];
+
+                parentA = slots[j].GetComponent<SlotController>().parents[0].GetComponent<SlotController>().occupyingBean;
+                parentB = slots[j].GetComponent<SlotController>().parents[1].GetComponent<SlotController>().occupyingBean;
+                child = slots[j].GetComponent<SlotController>().occupyingBean;
+
+                // Check if the first parent has the first gene of a child
+                if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0])
+                {
+                    // Check if the first parent has the second gene of a child
+                    if (parentB.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1])
+                        continue;
+                    else
+                    {
+                        result++;
+                        break;
+                    }
+                }
+                // Check if the second parent has the first gene of a child
+                else if (parentB.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0] || parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0])
+                {
+                    // Check if the second parent has the second gene of a child
+                    if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1])
+                        continue;
+                    else
+                    {
+                        result++;
+                        break;
+                    }
+                }
+                else
+                    break;
+            }
         }
 
         return result;

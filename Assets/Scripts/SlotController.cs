@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class SlotController : MonoBehaviour
 {
-    public bool parent;
+    // Two parents are in different pods
 
+    public GameObject[] parents;
     public GameObject occupyingBean;
 
     void Start()
     {
+        //parents = new GameObject[2];
         occupyingBean = null;
     }
 
