@@ -3,9 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
+    // Title Scene
     public GameObject option;
     bool music = true;
     bool sound = true;
+
+    // In Game Pause Menu
+    public GameObject pausePanel;
+    public GameObject pauseBtn;
+    public GameObject hintBtn;
+
 
     // Title Scene
     public void TitlePlayBtn()
@@ -85,6 +92,50 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("Main"); // Need to change later
     }
 
+    public void Level2()
+    {
+        SceneManager.LoadScene("Main 1");
+    }
+
+    public void Level3()
+    {
+        SceneManager.LoadScene("Main 2");
+    }
+
+    // In Game Pause
+    public void PauseBtn()
+    {
+        pausePanel.SetActive(true);
+        pauseBtn.SetActive(false);
+        hintBtn.SetActive(false);
+        // Bean should be not dragable
+    }
+
+    public void HintBtn()
+    {
+        // Need to change later
+        Debug.Log("Hint");
+    }
+
+    public void ResumeBtn()
+    {
+        pausePanel.SetActive(false);
+        pauseBtn.SetActive(true);
+        hintBtn.SetActive(true);
+    }
+
+    public void RestartBtn()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void MenuBtn()
+    {
+        // Need to load current level select scene
+        SceneManager.LoadScene("Level1");
+    }
+
+    // 
     public void BackBtn()
     {
         if (SceneManager.GetActiveScene().buildIndex == 1)
