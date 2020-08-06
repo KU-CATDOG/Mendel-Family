@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bean
   - Slot
+  - LevelManager
   layers:
   - Default
   - TransparentFX

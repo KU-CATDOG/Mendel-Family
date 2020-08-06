@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class UIController : MonoBehaviour
 {
+    GameObject manager;
+    public GameObject managerPrefab;
+
     // Title Scene
     public GameObject option;
     bool music = true;
@@ -13,6 +17,14 @@ public class UIController : MonoBehaviour
     public GameObject pauseBtn;
     public GameObject hintBtn;
 
+    void Start()
+    {
+        manager = GameObject.FindGameObjectWithTag("LevelManager");
+        if (manager == null)
+        {
+            Instantiate(managerPrefab);
+        }
+    }
 
     // Title Scene
     public void TitlePlayBtn()
@@ -69,37 +81,17 @@ public class UIController : MonoBehaviour
     }
 
     // Stage Select Scene
-    public void Stage1Btn()
+    public void StageBtn()
     {
-        SceneManager.LoadScene("Level1");
-    }
-
-    public void Stage2Btn()
-    {
-        // Need to change later
-        Debug.Log("Load Level 2 Scene");
-    }
-
-    public void Stage3Btn()
-    {
-        // Need to change later
-        Debug.Log("Load Level 3 Scene");
+        manager.GetComponent<LevelManager>().csvFile = EventSystem.current.currentSelectedGameObject.name;
+        SceneManager.LoadScene("Level");
     }
 
     // Level Select Scene
-    public void LevelSelectBtn()
+    public void LevelBtn()
     {
-        SceneManager.LoadScene("Main"); // Need to change later
-    }
-
-    public void Level2()
-    {
-        SceneManager.LoadScene("Main 1");
-    }
-
-    public void Level3()
-    {
-        SceneManager.LoadScene("Main 2");
+        manager.GetComponent<LevelManager>().level = int.Parse(EventSystem.current.currentSelectedGameObject.name);
+        SceneManager.LoadScene("Game");
     }
 
     // In Game Pause
@@ -132,7 +124,7 @@ public class UIController : MonoBehaviour
     public void MenuBtn()
     {
         // Need to load current level select scene
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("level");
     }
 
     // 
