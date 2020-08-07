@@ -13,11 +13,11 @@ public class LevelData : MonoBehaviour
         {
             string[] row = line[i].Split(',');  // Divide commas
 
-            Element element = new Element();
+            Element element = new Element();    // Assign values to the element
             element.level = int.Parse(row[0]);
             element.type = int.Parse(row[1]);
             element.pos = new Vector3(float.Parse(row[2]), float.Parse(row[3]), float.Parse(row[4]));
-            if (element.type != 2)
+            if (element.type != 2)  // If not slot give gene values
             {
                 element.y[0] = int.Parse(row[5]);
                 element.y[1] = int.Parse(row[6]);
@@ -29,6 +29,7 @@ public class LevelData : MonoBehaviour
         }
     }
 
+    // Return array of list that corresponds to the level of the parameter
     public Element[] GetElements(int level)
     {
         List<Element> levelList = new List<Element>();

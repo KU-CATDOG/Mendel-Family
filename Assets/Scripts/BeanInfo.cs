@@ -9,7 +9,6 @@ public class BeanInfo : MonoBehaviour
     public bool fixedBean;
 
     // Genotype variables in arrays. Dominant gene is 0.
-
     // Bean color: YY == 00, Yy == 01, yy == 11
     public int[] y = new int[2];
     // Bean shape: RR == 00, Rr = 01, rr == 11

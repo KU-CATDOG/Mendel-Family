@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class Element : MonoBehaviour
+public class Element
 {
     public int level;
     public int type;
