@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:
@@ -567,19 +567,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: Level2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -708,7 +697,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:
@@ -756,55 +745,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206406717}
   m_CullTransparentMesh: 0
---- !u!1 &264505539
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 264505541}
-  - component: {fileID: 264505540}
-  m_Layer: 0
-  m_Name: UIController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &264505540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264505539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84b0cb7ee761d4c10ad66c8ed1a5e578, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  managerPrefab: {fileID: 3011628974101299745, guid: 73baa98f15c342a4e80284e2b1d0d0d4,
-    type: 3}
-  option: {fileID: 0}
-  pausePanel: {fileID: 0}
-  pauseBtn: {fileID: 0}
-  hintBtn: {fileID: 0}
---- !u!4 &264505541
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264505539}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274338788
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +928,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:
@@ -1036,6 +976,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294993027}
   m_CullTransparentMesh: 0
+--- !u!1001 &342709880
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4328779808151492736, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328779808151492736, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328779808151492736, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328779808151492736, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328779808151492736, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328779808151492736, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328779808151492736, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328779808151492736, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328779808151492736, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328779808151492736, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328779808151492736, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328779808151492737, guid: cc6b49bb84524274b9eabe1a85d84769,
+        type: 3}
+      propertyPath: m_Name
+      value: UIController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc6b49bb84524274b9eabe1a85d84769, type: 3}
+--- !u!114 &342709881 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4328779808151492743, guid: cc6b49bb84524274b9eabe1a85d84769,
+    type: 3}
+  m_PrefabInstance: {fileID: 342709880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b0cb7ee761d4c10ad66c8ed1a5e578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &348844310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1139,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: BackBtn
         m_Mode: 1
         m_Arguments:
@@ -1597,7 +1618,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:
@@ -1727,19 +1748,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: Level3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2246,7 +2256,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:
@@ -2376,7 +2386,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:
@@ -2506,7 +2516,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:
@@ -2636,7 +2646,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:
@@ -2766,19 +2776,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: LevelSelectBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3294,7 +3293,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:
@@ -3580,7 +3579,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:
@@ -3710,7 +3709,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:
@@ -3932,7 +3931,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264505540}
+      - m_Target: {fileID: 342709881}
         m_MethodName: LevelBtn
         m_Mode: 1
         m_Arguments:

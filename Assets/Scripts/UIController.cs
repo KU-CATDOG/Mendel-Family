@@ -9,21 +9,29 @@ public class UIController : MonoBehaviour
 
     // Title Scene
     public GameObject option;
-    bool music = true;
-    bool sound = true;
+    bool music;
+    bool sound;
 
     // In Game Pause Menu
     public GameObject pausePanel;
     public GameObject pauseBtn;
     public GameObject hintBtn;
 
+    // Audio
+    AudioSource audioSource;
+
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("LevelManager");
         if (manager == null)
         {
-            Instantiate(managerPrefab);
+            manager = Instantiate(managerPrefab);
         }
+
+        // Audio
+        audioSource = GetComponent<AudioSource>();
+        sound = manager.GetComponent<LevelManager>().soundEffect;
+        music = manager.GetComponent<LevelManager>().audioSource.isActiveAndEnabled;
     }
 
     // Title Scene
@@ -49,12 +57,12 @@ public class UIController : MonoBehaviour
         // Music On/Off
         if (music)
         {
-            Debug.Log("Music Off");
+            manager.GetComponent<LevelManager>().audioSource.enabled = false;
             music = false;
         }
         else
         {
-            Debug.Log("Music On");
+            manager.GetComponent<LevelManager>().audioSource.enabled = true;
             music = true;
         }
     }
@@ -64,12 +72,12 @@ public class UIController : MonoBehaviour
         // Sound effect On/Off
         if (sound)
         {
-            Debug.Log("Sound Off");
+            manager.GetComponent<LevelManager>().soundEffect = false;
             sound = false;
         }
         else
         {
-            Debug.Log("Sound On");
+            manager.GetComponent<LevelManager>().soundEffect = true;
             sound = true;
         }
     }
@@ -94,6 +102,7 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    #region In Game 
     // In Game Pause
     public void PauseBtn()
     {
@@ -126,6 +135,7 @@ public class UIController : MonoBehaviour
         // Need to load current level select scene
         SceneManager.LoadScene("level");
     }
+    #endregion
 
     // 
     public void BackBtn()
@@ -138,5 +148,12 @@ public class UIController : MonoBehaviour
         {
             SceneManager.LoadScene("Stage");
         }
+    }
+
+    // Audio
+    public void SoundEffect()
+    {
+        if (manager.GetComponent<LevelManager>().soundEffect)
+            audioSource.Play();
     }
 }
