@@ -4,8 +4,7 @@ public class DragAndDrop : MonoBehaviour
 {
     Camera cam;
 
-    [SerializeField]
-    GameObject target;
+    [SerializeField] GameObject target;
     bool clicked = false;
 
     Vector3 screenPosition;
@@ -13,6 +12,9 @@ public class DragAndDrop : MonoBehaviour
     LayerMask layerMask;
     public LayerMask unselectedBean;
     public LayerMask selectedBean;
+
+    // Pause
+    public bool isPaused = false;
 
     void Start()
     {
@@ -63,7 +65,8 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
-        if (clicked)
+        // Move beans
+        if (clicked && !isPaused)
         {
             Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPosition.z);
 

@@ -103,13 +103,14 @@ public class UIController : MonoBehaviour
     }
 
     #region In Game 
-    // In Game Pause
+    // Pause
     public void PauseBtn()
     {
         pausePanel.SetActive(true);
         pauseBtn.SetActive(false);
         hintBtn.SetActive(false);
         // Bean should be not dragable
+        GameObject.Find("DragDropController").GetComponent<DragAndDrop>().isPaused = true;
     }
 
     public void HintBtn()
@@ -120,9 +121,11 @@ public class UIController : MonoBehaviour
 
     public void ResumeBtn()
     {
+        // Unpause
         pausePanel.SetActive(false);
         pauseBtn.SetActive(true);
         hintBtn.SetActive(true);
+        GameObject.Find("DragDropController").GetComponent<DragAndDrop>().isPaused = false;
     }
 
     public void RestartBtn()
