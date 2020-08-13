@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public int level;
-    public string csvFile;
+    public int level = 1;
+    public string csvFile = "Stage1";
 
     public bool soundEffect = true;
 

@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b125ae963ccb55946ade01adb5e183b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  csvFile: 
+  level: 1
+  csvFile: Stage1
   soundEffect: 1
   BGM:
   - {fileID: 8300000, guid: cbe36e0a0d116174ab1edcbd8aba591b, type: 3}

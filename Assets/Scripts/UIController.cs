@@ -12,7 +12,7 @@ public class UIController : MonoBehaviour
     bool music;
     bool sound;
 
-    // In Game Pause Menu
+    // In Game
     public GameObject pausePanel;
     public GameObject pauseBtn;
     public GameObject hintBtn;
@@ -134,6 +134,15 @@ public class UIController : MonoBehaviour
     {
         // Need to load current level select scene
         SceneManager.LoadScene("level");
+    }
+
+    // Next level after success
+    public void Success()
+    {
+        pauseBtn.SetActive(true);
+        hintBtn.SetActive(true);
+        manager.GetComponent<LevelManager>().level++;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     #endregion
 
