@@ -66,19 +66,20 @@ public class GameManager : MonoBehaviour
                 continue;
             else
             {
-                Debug.Log("!");
                 if (slots[j].GetComponent<SlotController>().parents[1] == null)
                     slots[j].GetComponent<SlotController>().parents[1] = slots[j].GetComponent<SlotController>().parents[0];
 
                 parentA = slots[j].GetComponent<SlotController>().parents[0].GetComponent<SlotController>().occupyingBean;
                 parentB = slots[j].GetComponent<SlotController>().parents[1].GetComponent<SlotController>().occupyingBean;
                 child = slots[j].GetComponent<SlotController>().occupyingBean;
-
+                
                 // Check if the first parent has the first gene of a child
-                if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0])
+                if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
                 {
-                    // Check if the first parent has the second gene of a child
-                    if (parentB.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1])
+                    // Check if the second parent has the second gene of a child
+                    if (parentB.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
+                        continue;
+                    else if (child.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
                         continue;
                     else
                     {
@@ -87,10 +88,12 @@ public class GameManager : MonoBehaviour
                     }
                 }
                 // Check if the second parent has the first gene of a child
-                else if (parentB.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0] || parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0])
+                else if (parentB.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0] || parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0] || parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
                 {
-                    // Check if the second parent has the second gene of a child
-                    if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1])
+                    // Check if the first parent has the second gene of a child
+                    if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
+                        continue;
+                    else if (child.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
                         continue;
                     else
                     {
