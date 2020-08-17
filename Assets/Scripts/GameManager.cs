@@ -47,7 +47,11 @@ public class GameManager : MonoBehaviour
         int result = 0;
 
         // result = color + shape
-        result += CheckAnswer(0) + CheckAnswer(1);
+        for (int k = 0; k < 2; k++)
+        {
+            result += CheckAnswer(k);
+            // Reset gene data
+        }
 
         if (result == 0)
             return true;
@@ -79,8 +83,22 @@ public class GameManager : MonoBehaviour
                     // Check if the second parent has the second gene of a child
                     if (parentB.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
                         continue;
-                    else if (child.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
+                    // If the child's genes are undecided
+                    else if (child.GetComponent<BeanInfo>().Genotype(arrNum)[0] == 0 && child.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
+                    {
+                        // If the parents are homozygous
+                        if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] && parentB.GetComponent<BeanInfo>().Genotype(arrNum)[0] == parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1])
+                        {
+                            // YY
+                            if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == parentB.GetComponent<BeanInfo>().Genotype(arrNum)[0])
+                                child.GetComponent<BeanInfo>().Genotype(arrNum)[1] = parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0];
+                            // Yy
+                            else
+                                child.GetComponent<BeanInfo>().Genotype(arrNum)[1] = 1;
+                            // Child's genes should be reset later
+                        }
                         continue;
+                    }
                     else
                     {
                         result++;
@@ -93,8 +111,22 @@ public class GameManager : MonoBehaviour
                     // Check if the first parent has the second gene of a child
                     if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[1] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
                         continue;
-                    else if (child.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
+                    // If the child's genes are undecided
+                    else if (child.GetComponent<BeanInfo>().Genotype(arrNum)[0] == 0 && child.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
+                    {
+                        // If the parents are homozygous
+                        if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] && parentB.GetComponent<BeanInfo>().Genotype(arrNum)[0] == parentB.GetComponent<BeanInfo>().Genotype(arrNum)[1])
+                        {
+                            // YY
+                            if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == parentB.GetComponent<BeanInfo>().Genotype(arrNum)[0])
+                                child.GetComponent<BeanInfo>().Genotype(arrNum)[1] = parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0];
+                            // Yy
+                            else
+                                child.GetComponent<BeanInfo>().Genotype(arrNum)[1] = 1;
+                            // Child's genes should be reset later
+                        }
                         continue;
+                    }
                     else
                     {
                         result++;

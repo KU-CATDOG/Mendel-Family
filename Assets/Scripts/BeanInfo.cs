@@ -13,10 +13,12 @@ public class BeanInfo : MonoBehaviour
     public int[] y = new int[2];
     // Bean shape: RR == 00, Rr = 01, rr == 11, R_ == 09
     public int[] r = new int[2];
+    // Bean color: RR == 00, RW == 01, WW == 11
+    public int[] rw = new int[2];
 
     void Start()
     {
-        if (y[0] == 0 && y[1] == 0)
+        if (y[0] == y[1] && r[0] == r[1])
             this.transform.GetChild(0).gameObject.SetActive(true);
     }
 
@@ -32,6 +34,8 @@ public class BeanInfo : MonoBehaviour
             return y;
         else if (arrNum == 1)
             return r;
+        else if (arrNum == 2)
+            return rw;
         else
             return null;
     }
