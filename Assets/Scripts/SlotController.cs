@@ -6,12 +6,11 @@ public class SlotController : MonoBehaviour
 {
     // Two parents are in different pods
 
-    public GameObject[] parents;
+    public GameObject[] parents = new GameObject[2];
     public GameObject occupyingBean;
 
     void Start()
     {
-        //parents = new GameObject[2];
         occupyingBean = null;
     }
 

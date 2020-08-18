@@ -5,6 +5,7 @@ public class LevelData : MonoBehaviour
 {
     List<Element> elementList = new List<Element>(); // List of all the elements from every levels
      
+    // Parse csv to data
     public void Parse(string csvFile)
     {
         TextAsset csvData = Resources.Load<TextAsset>(csvFile); // Load csvFile
@@ -23,6 +24,11 @@ public class LevelData : MonoBehaviour
                 element.y[1] = int.Parse(row[6]);
                 element.r[0] = int.Parse(row[7]);
                 element.r[1] = int.Parse(row[8]);
+            }
+            else     // If slot
+            {
+                element.y[0] = int.Parse(row[5]);
+                element.y[1] = int.Parse(row[6]);
             }
 
             elementList.Add(element);
