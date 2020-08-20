@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\LevelData.cs" />
     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\LevelSelectSceneGenerator.cs" />
     <Compile Include="Assets\Scripts\SlotController.cs" />
     <Compile Include="Assets\Scripts\StageSelectController.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />

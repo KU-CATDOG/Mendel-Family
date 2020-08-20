@@ -60,6 +60,12 @@ public class StageSelectController : MonoBehaviour
             }
         }
 
-                            stageName.text = selectedStage.name;
+        // Stage name text
+        if (selectedStage.name == "Stage1")
+            stageName.text = "Stage 1";
+        if (selectedStage.name == "Stage2")
+            stageName.text = "Stage 2";
+        if (selectedStage.name == "Stage3")
+            stageName.text = "Stage 3";
     }
 }
