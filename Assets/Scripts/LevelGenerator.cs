@@ -40,11 +40,11 @@ public class LevelGenerator : MonoBehaviour
 
                 if (currentLevel[i].y[0] != 0)  // 0 - Not exist
                 {
-                    element.GetComponent<SlotController>().parents[0] = slotList[currentLevel[i].y[0] - 1]; // Add parent data if exist
+                    element.GetComponentInChildren<SlotController>().parents[0] = slotList[currentLevel[i].y[0] - 1]; // Add parent data if exist
 
                     if (currentLevel[i].y[1] != 0)
                     {
-                        element.GetComponent<SlotController>().parents[1] = slotList[currentLevel[i].y[1] - 1]; // Add parent data if exist
+                        element.GetComponentInChildren<SlotController>().parents[1] = slotList[currentLevel[i].y[1] - 1]; // Add parent data if exist
                     }
                 }
             }

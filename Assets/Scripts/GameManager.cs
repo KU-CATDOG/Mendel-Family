@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         {
             for (int i = 0; i < slots.Length; i++)
             {
-                beans[i] = slots[i].GetComponent<SlotController>().occupyingBean;
+                beans[i] = slots[i].GetComponentInChildren<SlotController>().occupyingBean;
 
                 if (beans[i] == null)
                 {
@@ -66,16 +66,16 @@ public class GameManager : MonoBehaviour
 
         for (int j = 0; j < slots.Length; j++)
         {
-            if (slots[j].GetComponent<SlotController>().parents[0] == null)
+            if (slots[j].GetComponentInChildren<SlotController>().parents[0] == null)
                 continue;
             else
             {
-                if (slots[j].GetComponent<SlotController>().parents[1] == null)
-                    slots[j].GetComponent<SlotController>().parents[1] = slots[j].GetComponent<SlotController>().parents[0];
+                if (slots[j].GetComponentInChildren<SlotController>().parents[1] == null)
+                    slots[j].GetComponentInChildren<SlotController>().parents[1] = slots[j].GetComponentInChildren<SlotController>().parents[0];
 
-                parentA = slots[j].GetComponent<SlotController>().parents[0].GetComponent<SlotController>().occupyingBean;
-                parentB = slots[j].GetComponent<SlotController>().parents[1].GetComponent<SlotController>().occupyingBean;
-                child = slots[j].GetComponent<SlotController>().occupyingBean;
+                parentA = slots[j].GetComponentInChildren<SlotController>().parents[0].GetComponentInChildren<SlotController>().occupyingBean;
+                parentB = slots[j].GetComponentInChildren<SlotController>().parents[1].GetComponentInChildren<SlotController>().occupyingBean;
+                child = slots[j].GetComponentInChildren<SlotController>().occupyingBean;
                 
                 // Check if the first parent has the first gene of a child
                 if (parentA.GetComponent<BeanInfo>().Genotype(arrNum)[0] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == child.GetComponent<BeanInfo>().Genotype(arrNum)[0] || parentA.GetComponent<BeanInfo>().Genotype(arrNum)[1] == 9)
