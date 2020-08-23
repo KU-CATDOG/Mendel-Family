@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Universal.Runtime", "Unity.RenderPipelines.Universal.Runtime.csproj", "{99F43224-241E-F922-8B6A-C4D0401A359F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.csproj", "{45143D72-3D02-60B2-CDBA-3C15754CF4BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Universal.Runtime", "Unity.RenderPipelines.Universal.Runtime.csproj", "{99F43224-241E-F922-8B6A-C4D0401A359F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro", "Unity.TextMeshPro.csproj", "{2DC664A9-562D-283F-6FBC-400CCB60CB42}"
 EndProject
@@ -49,14 +49,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{99F43224-241E-F922-8B6A-C4D0401A359F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99F43224-241E-F922-8B6A-C4D0401A359F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99F43224-241E-F922-8B6A-C4D0401A359F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99F43224-241E-F922-8B6A-C4D0401A359F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45143D72-3D02-60B2-CDBA-3C15754CF4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45143D72-3D02-60B2-CDBA-3C15754CF4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45143D72-3D02-60B2-CDBA-3C15754CF4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45143D72-3D02-60B2-CDBA-3C15754CF4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F43224-241E-F922-8B6A-C4D0401A359F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F43224-241E-F922-8B6A-C4D0401A359F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F43224-241E-F922-8B6A-C4D0401A359F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F43224-241E-F922-8B6A-C4D0401A359F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2DC664A9-562D-283F-6FBC-400CCB60CB42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2DC664A9-562D-283F-6FBC-400CCB60CB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DC664A9-562D-283F-6FBC-400CCB60CB42}.Release|Any CPU.ActiveCfg = Release|Any CPU
