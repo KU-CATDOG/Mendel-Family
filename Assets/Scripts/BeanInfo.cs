@@ -11,14 +11,17 @@ public class BeanInfo : MonoBehaviour
 
     // Genotype variables in arrays. Dominant gene is 0.
     // Bean color: YY == 00, Yy == 01, yy == 11, Y_ == 09
-    public int[] y = new int[2];
+    int[] y = new int[2];
+    public int[] Y { get { return y; } set { y = value; } }
     // Bean shape: RR == 00, Rr = 01, rr == 11, R_ == 09
-    public int[] r = new int[2];
+    int[] r = new int[2];
+    public int[] R { get { return r; } set { r = value; } }
     // Bean color: RR == 00, RW == 01, WW == 11
-    public int[] rw = new int[2];
+    int[] rw = new int[2];
+    public int[] RW { get { return rw; } set { rw = value; } }
 
-    public bool[] undecided = new bool[2];
-    public bool[] Undecided { get; set; }
+    bool[] undecided = new bool[2];
+    public bool[] Undecided { get { return undecided; } set { undecided = value; } }
 
     void Start()
     {

@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
             // Reset gene data
             for (int l = 0; l < slots.Length; l++)
             {
-                if (slots[l].GetComponentInChildren<SlotController>().occupyingBean.GetComponent<BeanInfo>().undecided[k] == true)
+                if (slots[l].GetComponentInChildren<SlotController>().occupyingBean.GetComponent<BeanInfo>().Undecided[k] == true)
                     slots[l].GetComponentInChildren<SlotController>().occupyingBean.GetComponent<BeanInfo>().Genotype(k)[1] = 9;
             }
         }

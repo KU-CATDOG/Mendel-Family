@@ -12,8 +12,8 @@ public class BeanController : MonoBehaviour
     {
         beanInfo = GetComponent<BeanInfo>();
 
-        int ySum = beanInfo.y[0] + beanInfo.y[1];
-        int rSum = beanInfo.r[0] + beanInfo.r[1];
+        int ySum = beanInfo.Y[0] + beanInfo.Y[1];
+        int rSum = beanInfo.R[0] + beanInfo.R[1];
         int index = 0; // 0 - YYRR, 1 - yyRR, 2 - YYrr, 3 - yyrr; YY and RR includes Yy and Rr
 
         if (ySum == 2)   // If yy

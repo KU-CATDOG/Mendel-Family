@@ -31,8 +31,8 @@ public class LevelGenerator : MonoBehaviour
             GameObject element = Instantiate(elementPrefab[currentLevel[i].type], currentLevel[i].pos, Quaternion.identity);
             if (currentLevel[i].type != 2)  // If bean
             {
-                element.GetComponent<BeanInfo>().y = currentLevel[i].y; // Assign y gene data
-                element.GetComponent<BeanInfo>().r = currentLevel[i].r; // Assign r gene data
+                element.GetComponent<BeanInfo>().Y = currentLevel[i].y; // Assign y gene data
+                element.GetComponent<BeanInfo>().R = currentLevel[i].r; // Assign r gene data
             }
             else
             {
