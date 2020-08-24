@@ -14,7 +14,6 @@ public class UIController : MonoBehaviour
 
     // In Game
     public GameObject pausePanel;
-    public GameObject successPanel;
     public GameObject pauseBtn;
     public GameObject hintBtn;
 
@@ -140,18 +139,12 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("level");
     }
 
-    public void Success()
-    {
-        successPanel.SetActive(true);
-        pauseBtn.SetActive(false);
-        hintBtn.SetActive(false);
-    }
-
     // Next level after success
-    public void NxtLevelBtn()
+    public void Success()
     {
         pauseBtn.SetActive(true);
         hintBtn.SetActive(true);
+        manager.GetComponent<LevelManager>().level++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     #endregion
