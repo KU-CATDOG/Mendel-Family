@@ -7,7 +7,6 @@ using UnityEngine.Rendering;
 public class BeanInfo : MonoBehaviour
 {
     public bool fixedBean;
-    public bool clicked;
 
     // Genotype variables in arrays. Dominant gene is 0.
     // Bean color: YY == 00, Yy == 01, yy == 11, Y_ == 09
@@ -21,8 +20,6 @@ public class BeanInfo : MonoBehaviour
     {
         if (y[0] == y[1] && r[0] == r[1])
             this.transform.GetChild(0).gameObject.SetActive(true);
-
-        clicked = false;
     }
 
     void OnCollisionEnter(Collision col)

@@ -50,9 +50,6 @@ public class DragAndDrop : MonoBehaviour
                 layerMask = selectedBean;
                 //target.layer = selectedBean;
                 target.layer = 8;
-                // To control bean face
-                target.GetComponent<BeanInfo>().clicked = true;
-                target.GetComponentInChildren<FaceController>().ChangeFace();
             }
         }
 
@@ -64,9 +61,6 @@ public class DragAndDrop : MonoBehaviour
             {            
                 //target.layer = unselectedBean;
                 target.layer = 9;
-                // To control bean face
-                target.GetComponent<BeanInfo>().clicked = false;
-                target.GetComponentInChildren<FaceController>().ChangeFace();
                 target = null;
             }
         }

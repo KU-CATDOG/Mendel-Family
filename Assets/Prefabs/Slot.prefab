@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7243111235883615436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.9}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9076251002980656057}
@@ -190,9 +190,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9076251002980656057}
   - component: {fileID: 9076251002980656056}
+  - component: {fileID: 9076251002980656059}
   - component: {fileID: 9076251002980656062}
   - component: {fileID: 9076251002980656058}
-  - component: {fileID: 3300241401546260806}
   m_Layer: 0
   m_Name: Slot_body
   m_TagString: Slot
@@ -265,6 +265,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &9076251002980656059
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076251002980656053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 6, z: 6}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &9076251002980656062
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -297,17 +310,3 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   occupyingBean: {fileID: 0}
---- !u!136 &3300241401546260806
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9076251002980656053}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 2.7130718
-  m_Height: 7.5309296
-  m_Direction: 0
-  m_Center: {x: 0, y: -0.79295415, z: 0}

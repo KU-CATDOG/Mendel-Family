@@ -1,2 +1,0 @@
-D:\UnityProjects\Mendel-Family\obj\Debug\Unity.Rider.Editor.csprojAssemblyReference.cache
-D:\UnityProjects\Mendel-Family\obj\Debug\Unity.Rider.Editor.csproj.CoreCompileInputs.cache
