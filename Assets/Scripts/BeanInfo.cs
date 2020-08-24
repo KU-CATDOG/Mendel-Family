@@ -17,8 +17,19 @@ public class BeanInfo : MonoBehaviour
     // Bean color: RR == 00, RW == 01, WW == 11
     public int[] rw = new int[2];
 
+    public bool[] undecided = new bool[2];
+    public bool[] Undecided { get; set; }
+
     void Start()
     {
+        for (int i = 0; i < undecided.Length; i++)
+        {
+            if (Genotype(i)[1] == 9)
+                undecided[i] = true;
+            else
+                undecided[i] = false;
+        }
+
         if (y[0] == y[1] && r[0] == r[1])
             this.transform.GetChild(0).gameObject.SetActive(true);
 
