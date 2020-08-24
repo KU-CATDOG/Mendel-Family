@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
                     if (ConfirmLevel())
                     {
                         Debug.Log("Game Clear!");
+                        GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level++;
+                        GameObject.Find("UIController").GetComponent<UIController>().Success();
                     }
                     else
                     {
