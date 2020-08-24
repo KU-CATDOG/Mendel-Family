@@ -43,44 +43,21 @@ public class UIController : MonoBehaviour
 
     public void TitleOptionBtn()
     {
-        if (option.activeInHierarchy)
-        {
-            option.SetActive(false);
-        }
-        else
-        {
-            option.SetActive(true);
-        }
+        option.SetActive(!option.activeInHierarchy);
     }
 
     public void MusicBtn()
     {
-        // Music On/Off
-        if (music)
-        {
-            manager.GetComponent<LevelManager>().audioSource.enabled = false;
-            music = false;
-        }
-        else
-        {
-            manager.GetComponent<LevelManager>().audioSource.enabled = true;
-            music = true;
-        }
+        // Music on/off
+        manager.GetComponent<LevelManager>().audioSource.enabled = !manager.GetComponent<LevelManager>().audioSource.enabled;
+        music = !music;
     }
 
     public void SoundBtn()
     {
-        // Sound effect On/Off
-        if (sound)
-        {
-            manager.GetComponent<LevelManager>().soundEffect = false;
-            sound = false;
-        }
-        else
-        {
-            manager.GetComponent<LevelManager>().soundEffect = true;
-            sound = true;
-        }
+        // Sound effect on/off
+        manager.GetComponent<LevelManager>().soundEffect = manager.GetComponent<LevelManager>().soundEffect;
+        sound = !sound;
     }
 
     public void CreditBtn()
@@ -110,8 +87,7 @@ public class UIController : MonoBehaviour
         pausePanel.SetActive(true);
         pauseBtn.SetActive(false);
         hintBtn.SetActive(false);
-        // Bean should be not dragable
-        GameObject.Find("DragDropController").GetComponent<DragAndDrop>().isPaused = true;
+        GameObject.Find("DragDropController").GetComponent<DragAndDrop>().isPaused = true; // Bean should be not dragable
     }
 
     public void HintBtn()
@@ -146,6 +122,7 @@ public class UIController : MonoBehaviour
         successPanel.SetActive(true);
         pauseBtn.SetActive(false);
         hintBtn.SetActive(false);
+        GameObject.Find("DragDropController").GetComponent<DragAndDrop>().isPaused = true; // Bean should be not dragable
     }
 
     public void NextLvlBtn()

@@ -25,7 +25,7 @@ public class LevelGenerator : MonoBehaviour
     void GenerateLevel()
     {
         List<GameObject> slotList = new List<GameObject>();
-
+        
         for (int i = 0; i < currentLevel.Length; i++)
         {
             GameObject element = Instantiate(elementPrefab[currentLevel[i].type], currentLevel[i].pos, Quaternion.identity);

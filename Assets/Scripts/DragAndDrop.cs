@@ -24,8 +24,6 @@ public class DragAndDrop : MonoBehaviour
 
     void Update()
     {
-       
-
         // Mouse rightclick
         if (Input.GetMouseButton(0))
         {
