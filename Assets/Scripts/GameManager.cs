@@ -7,41 +7,14 @@ public class GameManager : MonoBehaviour
     public GameObject[] slots;
     GameObject[] beans;
 
+    bool levelComplete;
+
     void Start()
     {
         beans = new GameObject[slots.Length];
-    }
+        levelComplete = false;
 
-    // press ok button to confirm places
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            for (int i = 0; i < slots.Length; i++)
-            {
-                beans[i] = slots[i].GetComponentInChildren<SlotController>().occupyingBean;
-
-                if (beans[i] == null)
-                {
-                    Debug.Log("Level incomplete");
-                    break;
-                }
-
-                else if (i == slots.Length - 1)
-                {
-                    if (ConfirmLevel())
-                    {
-                        Debug.Log("Game Clear!");
-                        GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level++;
-                        GameObject.Find("UIController").GetComponent<UIController>().Success();
-                    }
-                    else
-                    {
-                        Debug.Log("Try Again!");
-                    }
-                }
-            }
-        }
+        StartCoroutine(CheckLevel());
     }
 
     bool ConfirmLevel()
@@ -147,5 +120,38 @@ public class GameManager : MonoBehaviour
         }
 
         return result;
+    }
+
+    IEnumerator CheckLevel()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+
+            for (int i = 0; i < slots.Length; i++)
+            {
+                if (slots[i].GetComponentInChildren<SlotController>().occupyingBean == null)
+                    break;
+                beans[i] = slots[i].GetComponentInChildren<SlotController>().occupyingBean;
+
+                if (i == slots.Length - 1)
+                    levelComplete = true;
+            }
+
+            if (levelComplete && ConfirmLevel())
+            {
+                Debug.Log("Game Clear!");
+                GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level++;
+                GameObject.Find("UIController").GetComponent<UIController>().Success();
+                levelComplete = false;
+            }
+            else if (levelComplete)
+            {
+                Debug.Log("Try Again!");
+                levelComplete = false;
+            }
+            else
+                Debug.Log("...");
+        }
     }
 }
