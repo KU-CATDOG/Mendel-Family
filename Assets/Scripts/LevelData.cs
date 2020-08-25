@@ -13,7 +13,6 @@ public class LevelData : MonoBehaviour
         for (int i = 1; i < line.Length; i++)
         {
             string[] row = line[i].Split(',');  // Divide commas
-            Debug.Log(i);
 
             Element element = new Element();    // Assign values to the element
             element.level = int.Parse(row[0]);  // Assign level
@@ -21,7 +20,7 @@ public class LevelData : MonoBehaviour
             element.pos = new Vector3(float.Parse(row[2]), float.Parse(row[3]), float.Parse(row[4]));   // Assign position
             if (element.type != 2)  // If not slot give gene values
             {
-                int num;
+                int num;    // Assign gene
                 if (int.TryParse(row[5], out num))
                     element.y[0] = num;
                 if (int.TryParse(row[6], out num))
@@ -32,12 +31,16 @@ public class LevelData : MonoBehaviour
                     element.r[1] = num;
                 if (int.TryParse(row[9], out num))
                     element.rw[0] = num;
+                else
+                    element.rw[0] = 8;  // If empty assign 8
                 if (int.TryParse(row[10], out num))
                     element.rw[1] = num;
+                else
+                    element.rw[0] = 8;  // If empty assign 8
             }
             else     // If slot
             {
-                element.y[0] = int.Parse(row[5]);
+                element.y[0] = int.Parse(row[5]);   // Assign parent
                 element.y[1] = int.Parse(row[6]);
             }
 

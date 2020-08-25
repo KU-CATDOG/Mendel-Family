@@ -1,17 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BeanController : MonoBehaviour
 {
-    LevelManager manager;
     public Material[] beanMaterial;
     public Sprite[] beanSprite;
     BeanInfo beanInfo;
 
     void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         beanInfo = GetComponent<BeanInfo>();
 
         int ySum = beanInfo.Y[0] + beanInfo.Y[1];
@@ -20,34 +16,30 @@ public class BeanController : MonoBehaviour
         int index = 0;
 
         if (ySum == 2)   // If yy
-        {
             index++;
-        }
+        
         if (rSum == 2)  // if rr
-        {
-            index += 2;
-        }
-        /*
-        if (rSum == 2)  // if rr
-        {
             index += 5;
-        }
-        if (rwSum == 0)
-        {
-            if (manager.csvFile == "Stage2")
-            {
-                index += 2;
-            }
-        }
-        else if (rwSum == 1)
-        {
+        
+        if (rwSum == 0) // rw red
+            index += 2;
+        else if (rwSum == 1)    // rw pink
             index += 3;
-        }
-        else if (rwSum == 2)
-        {
+        else if (rwSum == 2)    // rw white
             index += 4;
-        }
-        */
+
+        /*
+         * 0 - YYRR     Yellow Round
+         * 1 - yyRR     Green Round
+         * 2 - RWRR     Red Round
+         * 3 - RwRR     Pink Round
+         * 4 - rwRR     White Round
+         * 5 - YYrr     Yellow Wrinkled
+         * 6 - yyrr     Green Wrinkled
+         * 7 - RWrr     Red Wrinkled
+         * 8 - Rwrr     Pink Wrinkled
+         * 9 - rwrr     White Wrinkled
+         */
 
 
         gameObject.GetComponent<SpriteRenderer>().material = beanMaterial[index];

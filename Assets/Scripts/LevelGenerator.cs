@@ -39,7 +39,7 @@ public class LevelGenerator : MonoBehaviour
             {
                 slotList.Add(element);  // Create list of slots for gameManager.slots
 
-                if (currentLevel[i].y[0] != 0)  // 0 - Not exist
+                if (currentLevel[i].y[0] != 0)  // 0 - Parent does not exist
                 {
                     element.GetComponentInChildren<SlotController>().parents[0] = slotList[currentLevel[i].y[0] - 1]; // Add parent data if exist
 
