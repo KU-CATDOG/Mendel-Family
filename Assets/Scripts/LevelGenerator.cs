@@ -33,6 +33,7 @@ public class LevelGenerator : MonoBehaviour
             {
                 element.GetComponent<BeanInfo>().Y = currentLevel[i].y; // Assign y gene data
                 element.GetComponent<BeanInfo>().R = currentLevel[i].r; // Assign r gene data
+                element.GetComponent<BeanInfo>().RW = currentLevel[i].rw; // Assign r gene data
             }
             else
             {

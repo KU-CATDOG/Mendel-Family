@@ -8,4 +8,5 @@ public class Element
     public Vector3 pos;
     public int[] y = new int[2];
     public int[] r = new int[2];
+    public int[] rw = new int[2];
 }

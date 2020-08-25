@@ -129,7 +129,10 @@ public class UIController : MonoBehaviour
     {
         pauseBtn.SetActive(true);
         hintBtn.SetActive(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (manager.GetComponent<LevelManager>().level < 15)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        else
+            SceneManager.LoadScene("level");
     }
     #endregion
 

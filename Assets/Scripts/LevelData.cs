@@ -13,17 +13,27 @@ public class LevelData : MonoBehaviour
         for (int i = 1; i < line.Length; i++)
         {
             string[] row = line[i].Split(',');  // Divide commas
+            Debug.Log(i);
 
             Element element = new Element();    // Assign values to the element
-            element.level = int.Parse(row[0]);
-            element.type = int.Parse(row[1]);
-            element.pos = new Vector3(float.Parse(row[2]), float.Parse(row[3]), float.Parse(row[4]));
+            element.level = int.Parse(row[0]);  // Assign level
+            element.type = int.Parse(row[1]);   // Assign type
+            element.pos = new Vector3(float.Parse(row[2]), float.Parse(row[3]), float.Parse(row[4]));   // Assign position
             if (element.type != 2)  // If not slot give gene values
             {
-                element.y[0] = int.Parse(row[5]);
-                element.y[1] = int.Parse(row[6]);
-                element.r[0] = int.Parse(row[7]);
-                element.r[1] = int.Parse(row[8]);
+                int num;
+                if (int.TryParse(row[5], out num))
+                    element.y[0] = num;
+                if (int.TryParse(row[6], out num))
+                    element.y[1] = num;
+                if (int.TryParse(row[7], out num))
+                    element.r[0] = num;
+                if (int.TryParse(row[8], out num))
+                    element.r[1] = num;
+                if (int.TryParse(row[9], out num))
+                    element.rw[0] = num;
+                if (int.TryParse(row[10], out num))
+                    element.rw[1] = num;
             }
             else     // If slot
             {
