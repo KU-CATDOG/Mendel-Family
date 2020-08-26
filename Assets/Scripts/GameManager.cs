@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
     GameObject[] beans;
 
     bool levelComplete;
+    bool success;
 
     void Start()
     {
         beans = new GameObject[slots.Length];
         levelComplete = false;
+        success = false;
 
         StartCoroutine(CheckLevel());
     }
@@ -138,12 +140,13 @@ public class GameManager : MonoBehaviour
                     levelComplete = true;
             }
 
-            if (levelComplete && ConfirmLevel())
+            if (levelComplete && ConfirmLevel() && !success)
             {
                 Debug.Log("Game Clear!");
                 GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level++;
-                GameObject.Find("UIController").GetComponent<UIController>().Success();
+                GameObject.Find("UIController").GetComponent<UIController>().Success(); // open success panel
                 levelComplete = false;
+                success = true;
             }
             else if (levelComplete)
             {
