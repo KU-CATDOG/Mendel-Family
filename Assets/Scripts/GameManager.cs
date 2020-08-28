@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] slots;
     GameObject[] beans;
 
+    public GameObject gameClear;
+
     bool levelComplete;
     bool success;
 
@@ -144,6 +146,9 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Game Clear!");
                 GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level++;
+
+                gameClear.GetComponent<ParticleSystem>().Play();
+                yield return new WaitForSeconds(1);
                 GameObject.Find("UIController").GetComponent<UIController>().Success(); // open success panel
                 levelComplete = false;
                 success = true;
