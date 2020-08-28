@@ -125,6 +125,12 @@ public class UIController : MonoBehaviour
         GameObject.Find("DragDropController").GetComponent<DragAndDrop>().isPaused = true; // Bean should be not dragable
     }
 
+    public void ReplayBtn()
+    {
+        manager.GetComponent<LevelManager>().level -= 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void NextLvlBtn()
     {
         pauseBtn.SetActive(true);
