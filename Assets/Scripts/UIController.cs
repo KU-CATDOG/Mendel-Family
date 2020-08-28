@@ -44,6 +44,15 @@ public class UIController : MonoBehaviour
     public void TitleOptionBtn()
     {
         option.SetActive(!option.activeInHierarchy);
+        if (option.activeSelf)
+            option.transform.parent.parent.GetChild(3).GetComponent<RectTransform>().position -= new Vector3(0, 470, 0);
+        else
+            option.transform.parent.parent.GetChild(3).GetComponent<RectTransform>().position += new Vector3(0, 470, 0);
+    }
+
+    public void ExitBtn()
+    {
+        Application.Quit();
     }
 
     public void MusicBtn()
