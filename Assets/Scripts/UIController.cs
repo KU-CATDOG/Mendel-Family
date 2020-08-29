@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     // In Game
     public GameObject pausePanel;
     public GameObject successPanel;
+    public GameObject tutorialPanel;
     public GameObject pauseBtn;
     public GameObject hintBtn;
 
@@ -87,6 +88,14 @@ public class UIController : MonoBehaviour
     }
 
     #region In Game 
+    // Tutorial
+    public void OkBtn()
+    {
+        tutorialPanel.SetActive(false);
+        pauseBtn.SetActive(true);
+        hintBtn.SetActive(true);
+    }
+
     // Pause
     public void PauseBtn()
     {
