@@ -39,12 +39,6 @@ public class BeanInfo : MonoBehaviour
         clicked = false;
     }
 
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "Bean")
-            Physics.IgnoreCollision(col.collider, this.GetComponent<Collider>());
-    }
-
     public int[] Genotype(int arrNum)
     {
         if (arrNum == 0)

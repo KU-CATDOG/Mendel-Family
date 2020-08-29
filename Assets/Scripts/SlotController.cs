@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,6 +29,11 @@ public class SlotController : MonoBehaviour
                 other.transform.position = new Vector3(this.transform.position.x - 0.12f, this.transform.position.y + 0.04f, this.transform.position.z - 0.05f);
             else
                 other.transform.position = new Vector3(this.transform.position.x + 0.12f, this.transform.position.y + 0.04f, this.transform.position.z - 0.05f);
+
+            // Make bean upright
+            other.transform.rotation = Quaternion.identity;
+            other.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            other.GetComponent<Rigidbody>().velocity = Vector3.zero;
             occupyingBean = other.gameObject;
         }
     }

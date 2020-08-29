@@ -51,6 +51,8 @@ public class DragAndDrop : MonoBehaviour
                 // To control bean face
                 target.GetComponent<BeanInfo>().clicked = true;
                 target.GetComponentInChildren<FaceController>().ChangeFace();
+                // Make bean upright
+                target.transform.rotation = Quaternion.identity;
             }
         }
 
