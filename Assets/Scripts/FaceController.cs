@@ -8,6 +8,8 @@ public class FaceController : MonoBehaviour
     public GameObject faceOn;
     GameObject dragFace;
 
+    GameObject dragDrop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +25,13 @@ public class FaceController : MonoBehaviour
         faceOn.SetActive(true);
         dragFace.SetActive(false);
         faceOn.GetComponent<Animator>().speed = UnityEngine.Random.Range(0.8f, 1.2f);
+
+        dragDrop = GameObject.Find("DragDropController");
     }
 
     public void ChangeFace()
     {
-        if (faceOn.activeSelf && !dragFace.activeSelf && this.GetComponentInParent<BeanInfo>().clicked == true)
+        if (faceOn.activeSelf && !dragFace.activeSelf && this.GetComponentInParent<BeanInfo>().clicked && !dragDrop.GetComponent<DragAndDrop>().isPaused)
         {
             faceOn.SetActive(false);
             dragFace.SetActive(true);
