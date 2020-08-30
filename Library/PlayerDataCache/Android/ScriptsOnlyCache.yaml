@@ -12,6 +12,7 @@ ScriptsOnlyBuild:
     - LevelSelectSceneGenerator
     - LimbController
     - SlotController
+    - StageController
     - StageSelectController
     - UIController
     Unity.RenderPipelines.Core.Runtime.dll:
@@ -125,39 +126,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11292}
     - Class: 114
-      Script: {instanceID: 11642}
+      Script: {instanceID: 11690}
     - Class: 114
-      Script: {instanceID: 11716}
+      Script: {instanceID: 11764}
     - Class: 114
-      Script: {instanceID: 12198}
+      Script: {instanceID: 12246}
     - Class: 114
-      Script: {instanceID: 12204}
+      Script: {instanceID: 12252}
     - Class: 114
-      Script: {instanceID: 12378}
+      Script: {instanceID: 12426}
     - Class: 114
-      Script: {instanceID: 12416}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 12502}
+      Script: {instanceID: 12550}
     - Class: 114
-      Script: {instanceID: 12798}
+      Script: {instanceID: 12844}
     - Class: 114
-      Script: {instanceID: 13130}
+      Script: {instanceID: 13178}
     - Class: 114
-      Script: {instanceID: 13168}
+      Script: {instanceID: 13216}
     - Class: 114
-      Script: {instanceID: 13180}
+      Script: {instanceID: 13228}
     - Class: 114
-      Script: {instanceID: 13312}
+      Script: {instanceID: 13360}
     - Class: 114
-      Script: {instanceID: 14170}
+      Script: {instanceID: 14218}
     - Class: 114
-      Script: {instanceID: 14562}
+      Script: {instanceID: 14610}
     - Class: 114
-      Script: {instanceID: 14704}
+      Script: {instanceID: 14752}
     - Class: 114
-      Script: {instanceID: 14726}
+      Script: {instanceID: 14774}
     - Class: 114
-      Script: {instanceID: 14798}
+      Script: {instanceID: 14846}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -220,23 +221,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11292}
     - Class: 114
-      Script: {instanceID: 11716}
+      Script: {instanceID: 11764}
     - Class: 114
-      Script: {instanceID: 11810}
+      Script: {instanceID: 11858}
     - Class: 114
-      Script: {instanceID: 12198}
+      Script: {instanceID: 12246}
     - Class: 114
-      Script: {instanceID: 12416}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 12798}
+      Script: {instanceID: 12844}
     - Class: 114
-      Script: {instanceID: 13168}
+      Script: {instanceID: 13216}
     - Class: 114
-      Script: {instanceID: 14144}
+      Script: {instanceID: 14192}
     - Class: 114
-      Script: {instanceID: 14562}
+      Script: {instanceID: 14610}
     - Class: 114
-      Script: {instanceID: 14726}
+      Script: {instanceID: 14774}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -293,25 +294,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11292}
     - Class: 114
-      Script: {instanceID: 11716}
+      Script: {instanceID: 11764}
     - Class: 114
-      Script: {instanceID: 12198}
+      Script: {instanceID: 12246}
     - Class: 114
-      Script: {instanceID: 12416}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 12618}
+      Script: {instanceID: 12666}
     - Class: 114
-      Script: {instanceID: 12798}
+      Script: {instanceID: 12844}
     - Class: 114
-      Script: {instanceID: 12822}
+      Script: {instanceID: 12868}
     - Class: 114
-      Script: {instanceID: 13168}
+      Script: {instanceID: 13118}
     - Class: 114
-      Script: {instanceID: 13524}
+      Script: {instanceID: 13216}
     - Class: 114
-      Script: {instanceID: 14562}
+      Script: {instanceID: 13572}
     - Class: 114
-      Script: {instanceID: 14726}
+      Script: {instanceID: 14610}
+    - Class: 114
+      Script: {instanceID: 14774}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -376,77 +379,77 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11292}
     - Class: 114
-      Script: {instanceID: 11426}
+      Script: {instanceID: 11474}
     - Class: 114
-      Script: {instanceID: 11530}
+      Script: {instanceID: 11578}
     - Class: 114
-      Script: {instanceID: 11550}
+      Script: {instanceID: 11598}
     - Class: 114
-      Script: {instanceID: 11716}
+      Script: {instanceID: 11764}
     - Class: 114
-      Script: {instanceID: 11754}
+      Script: {instanceID: 11802}
     - Class: 114
-      Script: {instanceID: 11908}
+      Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 12198}
+      Script: {instanceID: 12246}
     - Class: 114
-      Script: {instanceID: 12242}
+      Script: {instanceID: 12290}
     - Class: 114
-      Script: {instanceID: 12300}
+      Script: {instanceID: 12348}
     - Class: 114
-      Script: {instanceID: 12416}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 12524}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 12724}
+      Script: {instanceID: 12770}
     - Class: 114
-      Script: {instanceID: 12764}
+      Script: {instanceID: 12810}
     - Class: 114
-      Script: {instanceID: 12798}
+      Script: {instanceID: 12844}
     - Class: 114
-      Script: {instanceID: 12822}
+      Script: {instanceID: 12868}
     - Class: 114
-      Script: {instanceID: 12914}
+      Script: {instanceID: 12960}
     - Class: 114
-      Script: {instanceID: 13168}
+      Script: {instanceID: 13216}
     - Class: 114
-      Script: {instanceID: 13196}
+      Script: {instanceID: 13244}
     - Class: 114
-      Script: {instanceID: 13464}
+      Script: {instanceID: 13512}
     - Class: 114
-      Script: {instanceID: 13524}
+      Script: {instanceID: 13572}
     - Class: 114
-      Script: {instanceID: 13544}
+      Script: {instanceID: 13592}
     - Class: 114
-      Script: {instanceID: 13664}
+      Script: {instanceID: 13712}
     - Class: 114
-      Script: {instanceID: 13692}
+      Script: {instanceID: 13740}
     - Class: 114
-      Script: {instanceID: 13700}
+      Script: {instanceID: 13748}
     - Class: 114
-      Script: {instanceID: 13992}
+      Script: {instanceID: 14040}
     - Class: 114
-      Script: {instanceID: 14056}
+      Script: {instanceID: 14104}
     - Class: 114
-      Script: {instanceID: 14280}
+      Script: {instanceID: 14328}
     - Class: 114
-      Script: {instanceID: 14458}
+      Script: {instanceID: 14506}
     - Class: 114
-      Script: {instanceID: 14502}
+      Script: {instanceID: 14550}
     - Class: 114
-      Script: {instanceID: 14562}
+      Script: {instanceID: 14610}
     - Class: 114
-      Script: {instanceID: 14694}
+      Script: {instanceID: 14742}
     - Class: 114
-      Script: {instanceID: 14696}
+      Script: {instanceID: 14744}
     - Class: 114
-      Script: {instanceID: 14726}
+      Script: {instanceID: 14774}
     - Class: 114
-      Script: {instanceID: 14746}
+      Script: {instanceID: 14794}
     - Class: 114
-      Script: {instanceID: 14858}
+      Script: {instanceID: 14906}
     - Class: 114
-      Script: {instanceID: 14864}
+      Script: {instanceID: 14912}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -506,6 +509,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 723614de6aa8ab77c2d95f1e7d3c733b
+    assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
+    namespaceName: UnityEngine.Rendering.Universal
+    className: UniversalRenderPipelineAsset
   - hash:
       serializedVersion: 2
       Hash: c42672c997f8be6b1aa86a927ebea785
@@ -814,12 +823,6 @@ ScriptsOnlyBuild:
     className: StageSelectController
   - hash:
       serializedVersion: 2
-      Hash: 723614de6aa8ab77c2d95f1e7d3c733b
-    assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
-    namespaceName: UnityEngine.Rendering.Universal
-    className: UniversalRenderPipelineAsset
-  - hash:
-      serializedVersion: 2
       Hash: 5e1eefcd5106de6c2e85908a3b2d3f04
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering.UI
@@ -878,6 +881,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: RemoteTestResultSender
+  - hash:
+      serializedVersion: 2
+      Hash: fa2acb46eb2efaf67eb648f478ec8d44
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StageController
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1114,7 +1123,7 @@ ScriptsOnlyBuild:
     className: CinemachineUniversalPixelPerfect
   - hash:
       serializedVersion: 2
-      Hash: d258c94eb885b15382afe936224c5b87
+      Hash: d1c06d8ca2b65aadc10e9f78d61dfa90
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelSelectSceneGenerator
@@ -1198,7 +1207,7 @@ ScriptsOnlyBuild:
     className: SceneRenderPipeline
   - hash:
       serializedVersion: 2
-      Hash: 286819925ddce8543381fe5c8c14b79c
+      Hash: 261c843613e51b458747e978bf30db45
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIController
@@ -1352,4 +1361,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Stage.unity
   - Assets/Scenes/Level.unity
   - Assets/Scenes/Game.unity
-  playerPath: "D:/UnityProjects/\uBA58\uB378\uD328\uBC00\uB9AC \uC790\uB8CC/Build/Ver_03_1.apk"
+  playerPath: "D:/UnityProjects/\uBA58\uB378\uD328\uBC00\uB9AC \uC790\uB8CC/Build/Mendel
+    Family.apk"
