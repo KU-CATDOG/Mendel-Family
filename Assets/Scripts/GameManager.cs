@@ -145,7 +145,15 @@ public class GameManager : MonoBehaviour
             if (levelComplete && ConfirmLevel() && !success)
             {
                 Debug.Log("Game Clear!");
-                GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level++;
+                LevelManager manager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+                manager.level++;
+                int unlockedLevels = PlayerPrefs.GetInt(manager.csvFile, 1);
+                if (unlockedLevels < manager.level)
+                    PlayerPrefs.SetInt(manager.csvFile, manager.level);
+
+                int unlockedStage = PlayerPrefs.GetInt("Stage", 1);
+                if (manager.level > 15)
+                    PlayerPrefs.SetInt("Stage", ++unlockedStage);
 
                 gameClear.GetComponent<ParticleSystem>().Play();
                 yield return new WaitForSeconds(1);

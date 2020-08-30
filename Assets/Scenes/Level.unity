@@ -3801,6 +3801,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageName: {fileID: 113233445}
+  btns:
+  - {fileID: 1126712554}
+  - {fileID: 136129089}
+  - {fileID: 766914983}
+  - {fileID: 206406719}
+  - {fileID: 1695714904}
+  - {fileID: 2144017472}
+  - {fileID: 12757813}
+  - {fileID: 1059311513}
+  - {fileID: 1569041043}
+  - {fileID: 1766400905}
+  - {fileID: 294993029}
+  - {fileID: 1054711358}
+  - {fileID: 1063131357}
+  - {fileID: 1048881743}
+  - {fileID: 664267633}
+  lockedSprite: {fileID: 21300000, guid: eca910f9eda6a144193c151eff14fea6, type: 3}
 --- !u!1 &1797172673
 GameObject:
   m_ObjectHideFlags: 0

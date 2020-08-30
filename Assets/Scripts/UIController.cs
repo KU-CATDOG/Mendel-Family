@@ -15,9 +15,13 @@ public class UIController : MonoBehaviour
     // In Game
     public GameObject pausePanel;
     public GameObject successPanel;
-    public GameObject tutorialPanel;
     public GameObject pauseBtn;
     public GameObject hintBtn;
+
+    // Tutorial
+    public GameObject[] tutorialPanel;
+    public int tutorialIndex = 0;
+    int[] stage1Tutorial = { 1, 2, 3, 4, 5, 9 };
 
     // Audio
     AudioSource audioSource;
@@ -34,6 +38,33 @@ public class UIController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         sound = manager.GetComponent<LevelManager>().soundEffect;
         music = manager.GetComponent<LevelManager>().audioSource.isActiveAndEnabled;
+
+        // Tutorial
+        if (SceneManager.GetActiveScene().buildIndex == 3 && manager.GetComponent<LevelManager>().csvFile == "Stage1")  // Stage1
+        {
+            for (tutorialIndex = 0; tutorialIndex < stage1Tutorial.Length; tutorialIndex++)
+            {
+                if (manager.GetComponent<LevelManager>().level == stage1Tutorial[tutorialIndex])
+                {
+                    tutorialPanel[tutorialIndex].SetActive(true);
+                    pauseBtn.SetActive(false);
+                    hintBtn.SetActive(false);
+                    GameObject.Find("DragDropController").GetComponent<DragAndDrop>().isPaused = true;
+                    break;
+                }
+            }
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 3 && manager.GetComponent<LevelManager>().csvFile == "Stage2")  // Stage2
+        {
+            if (manager.GetComponent<LevelManager>().level == 1)
+            {
+                tutorialPanel[6].SetActive(true);
+                pauseBtn.SetActive(false);
+                hintBtn.SetActive(false);
+                GameObject.Find("DragDropController").GetComponent<DragAndDrop>().isPaused = true;
+            }
+        }
     }
 
     // Title Scene
@@ -91,9 +122,14 @@ public class UIController : MonoBehaviour
     // Tutorial
     public void OkBtn()
     {
-        tutorialPanel.SetActive(false);
+        if (manager.GetComponent<LevelManager>().csvFile == "Stage1")
+            tutorialPanel[tutorialIndex].SetActive(false);
+        else if (manager.GetComponent<LevelManager>().csvFile == "Stage2")
+            tutorialPanel[6].SetActive(false);
+
         pauseBtn.SetActive(true);
         hintBtn.SetActive(true);
+        GameObject.Find("DragDropController").GetComponent<DragAndDrop>().isPaused = false;
     }
 
     // Pause
